@@ -14,7 +14,7 @@
 
         }
         .bg {
-            background-image: url(https://images.pexels.com/photos/11681097/pexels-photo-11681097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-image: url(img/pexels-cristian-dina-11681097.jpg);
             background-position: center center;
         }
     </style>
@@ -27,28 +27,38 @@
             </div>
             <div class="col bg-white p-3 rounded-end">
                 <div class="text-end">
-                    <h2 class="fw-bold text-center py-3">Inicia sesión con tu cuenta</h2>
+                    <h2 class="fw-bold text-center py-3">Regístrate</h2>
 
                     <!--login-->
-                    <form action="/">
+                    <form action="/register" method="post">
+                        
+                        <div class="mb-1 text-start">
+                            <label for="first_name" class="form-label">Nombre</label>
+                            <input type="text" id="first_name" class="form-control" name="first_name">
+                        </div>
+                        <div class="mb-1 text-start">
+                            <label for="last_name" class="form-label">Apellido</label>
+                            <input type="text" id="last_name" name="last_name" class="form-control">
+                        </div>
                         <div class="mb-1 text-start">
                             <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" id="email" class="form-control" name="email">
                         </div>
                         <div class="mb-1 text-start">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" name="password">
+                            <input type="password" id="password" class="form-control" name="password">
                         </div>
-                        <div class="mb-2 form-check text-start">
-                            <input type="checkbox" name="connected" class="form-check-input">
-                            <label for="connected" class="form-check-label">Mantenerme conectado</label>
+                        
+                        <div class="mb-1 text-start">
+                            <label for="confirm_password" class="form-label">Confirmar contraseña</label>
+                            <input type="password" id="confirm_password" class="form-control" name="confirm_password">
                         </div>
                         <div class="row">
                             <div class="col">
                                 <button class="btn btn-success w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-md-10 text-center">
-                                            Iniciar sesión
+                                            Regístrate
                                         </div>
                                     </div>
                                 </button>                                
@@ -57,27 +67,24 @@
                                 <button class="btn btn-success w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-md-10 text-center">
-                                            Registrarse
+                                            Inicia sesión
                                         </div>
                                     </div>
                                 </button>                                
                             </div>
                         </div>
-                        <div class="my-3 text-start">
-                            <span><a href="#">Recuperar contraseña</a></span>
-                        </div>
                     </form>
                     <!--login con redes sociales-->
                     <div class="container w-100 my-5">
                         <div class="row text-center">
-                            <div class="col-12">Iniciar sesión</div>
+                            <div class="col-12">Regístrate</div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <button class="btn btn-outline-primary w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-2 d-none d-md-block">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" width="32" alt="">
+                                            <img src="img/fb.svg.webp" width="32" alt="">
                                         </div>
                                         <div class="col-12 col-md-10 text-center">
                                             Facebook
@@ -89,7 +96,7 @@
                                 <button class="btn btn-outline-danger w-100 my-1">
                                     <div class="row align-items-center">
                                         <div class="col-2 d-none d-md-block">
-                                            <img src="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo.png" width="32" alt="">
+                                            <img src="img/g.svg_.png" width="32" alt="">
                                         </div>
                                         <div class="col-12 col-md-10 text-center">
                                             Google
