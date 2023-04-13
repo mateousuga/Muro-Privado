@@ -3,7 +3,7 @@ from flask import render_template, redirect, session, request, flash #importacio
 from flask_app import app
 
 #importanto modelo de user
-
+from flask_app.model.users import User
 
 #importar bcrypt (encriptar)
 
@@ -13,3 +13,4 @@ def index():
 
 
 #crear ruta para /register
+#@app.route('/register', methods=['POST'])
