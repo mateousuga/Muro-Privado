@@ -21,3 +21,18 @@ class User:
         query = "INSERT INTO users(first_name, last_name, email, password) VALUES(%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
         result = connectToMySQL('muroprivado').quey_db(query, formulario)
         return result
+    
+    @staticmethod
+    def valida_usuario(formulario):
+        es_valido = True
+        
+        #validar que el nombre y el apellido tenga mas de 3 caracteres
+        if len(formulario['first_name']) < 3:
+            flash('Nombre debe de tener mas de 3 caracteres','registro')
+            es_valido = False
+        
+        if len(formulario['last_name']) < 3:
+            flash('Apellido debe de tener mas de 3 caracteres','registro')
+            es_valido = False
+        
+        #validar email con expresiones regulares
