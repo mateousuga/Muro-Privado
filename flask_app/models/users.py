@@ -57,3 +57,13 @@ class User:
             es_valido = False
         
         return es_valido
+    
+    @classmethod
+    def get_by_email(cls, formulario):
+        query = "SELECT * FROM users WHERE email = %(email)s"
+        result = connectToMySQL('muroprivado').query_db(query, formulario)
+        if len(result) < 1:
+            return False
+        else:
+            user = cls(result[0]) #haciendo una instancia de user con los datos recibidos de la base de datos
+            return user

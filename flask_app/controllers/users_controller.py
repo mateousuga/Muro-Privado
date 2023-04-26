@@ -32,6 +32,16 @@ def register():
     User.save(formulario)
     return redirect('/inicio.html')
 
+@app.route('/login')
+def login():
+    user = User.get_by_email(request.form)
+    if not user: #si user=false
+        flash('El email es incorreto', 'login')
+        return redirect('/')
+    
+    if not bcrypt.check_password_hash(user.password, request.form['password']):
+        flash("La contraseña es incorrecta")
+
 @app.route('/inicio.html')
 def inicio():
     return render_template('inicio.html')
