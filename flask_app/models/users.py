@@ -21,7 +21,7 @@ class User:
     def save(cls, formulario):
         query = "INSERT INTO users(first_name, last_name, email, password) VALUES(%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
         result = connectToMySQL('muroprivado').query_db(query, formulario)
-        return result
+        return result #regresamos el ID de nuestro usuario (result=identificador del nuevo registro) insert recibe ID
     
     @staticmethod
     def valida_usuario(formulario):
@@ -67,3 +67,10 @@ class User:
         else:
             user = cls(result[0]) #haciendo una instancia de user con los datos recibidos de la base de datos
             return user
+    
+    @classmethod
+    def get_by_id(cls, formulario):
+        query = "SELECT * FROM users WHERE id = %(id)s"
+        result = connectToMySQL('muroprivado').query_db(query, formulario) #select recibe una lista
+        user = cls(result[0])
+        return user
